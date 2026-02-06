@@ -1,5 +1,5 @@
 
- #### SUPPLY CHAIN AND INVENTORY MANAGEMENT
+ #### SUPPLY CHAIN AND INVENTORY MANAGEMENT (SCIM) 
 
  **Full-Stack Architecture Diagram**
                         
@@ -10,11 +10,13 @@
                         └─────────────┬────────────────┘
                                       │
           ┌─────────────┬─────────────┴─────────────┬─────────────┐
-          │             │                           │             │
-**1.Inventory Dashboard**   **2.Supplier Portal**         **3.Forecast Dashboard**  **4.Order Tracking UI**
-- Stock levels        - Supplier risk           - Demand forecasts   - Order status
-- Alerts / Reorder    - SLA compliance          - Warehouse trends   - Backorders
-- Warehouse KPIs      - Performance metrics                            
+          │             │                           │             │       
+
+| **1.Inventory Dashboard**   | **2.Supplier Portal** | **3.Forecast Dashboard** |  **4.Order Tracking UI**|
+|-----------------------------|-----------------------|-------------------------|--------------------------|
+| - Stock levels              | - Supplier risk       |    - Demand forecasts    | - Order status         |
+| - Alerts / Reorder          | - SLA compliance      |    - Warehouse trends    | - Backorders            |
+| - Warehouse KPIs            | - Performance metrics |                          
 
                                       │
                                       ▼

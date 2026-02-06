@@ -11,7 +11,7 @@
                                       │
           ┌─────────────┬─────────────┴─────────────┬─────────────┐
           │             │                           │             │
-Inventory Dashboard   Supplier Portal          Forecast Dashboard  Order Tracking UI
+**1.Inventory Dashboard**   **2.Supplier Portal**         **3.Forecast Dashboard**  **4.Order Tracking UI**
 - Stock levels        - Supplier risk           - Demand forecasts   - Order status
 - Alerts / Reorder    - SLA compliance          - Warehouse trends   - Backorders
 - Warehouse KPIs      - Performance metrics                            

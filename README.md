@@ -53,3 +53,25 @@
            │ Forecasting  │                     │ Grafana /   │
            └─────────────┘                     │ Logging     │
                                                └─────────────┘
+
+Project RoadMap
+
+
+Phase
+Features
+Phase 1
+Core inventory + catalog + authentication
+Phase 2
+Orders + procurement + Kafka event flows
+Phase 3
+Forecasting & intelligent reorder engine
+Phase 4
+RMA & repair lifecycle
+Phase 5
+Search + recommendations
+Phase 6
+Analytics dashboards & observability
+Phase 7
+Docker + K8s deployment + CI/CD
+
+

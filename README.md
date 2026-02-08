@@ -54,6 +54,16 @@
            └─────────────┘                     │ Logging     │
                                                └─────────────┘
 
+                ┌──────────────────────────┐
+                │        AWS Cloud         │
+                │                          │
+                │ Compute: ECS / EKS       │
+                │ Storage: S3 / RDS        │
+                │ ML: SageMaker / Bedrock  │
+                │ Events: SQS / Kinesis    │
+                │ Security: IAM / KMS      │
+                │ Monitoring: CloudWatch   │
+                └──────────────────────────┘
 **Project RoadMap**
 
 **Phase Features**

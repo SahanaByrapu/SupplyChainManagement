@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 240 6% 4%;
+        --foreground: 0 0% 98%;
+        --card: 240 4% 7%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 4% 7%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 217 91% 60%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 240 4% 16%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 4% 16%;
+        --muted-foreground: 240 5% 65%;
+        --accent: 38 92% 50%;
+        --accent-foreground: 0 0% 0%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 240 4% 16%;
+        --input: 240 4% 16%;
+        --ring: 217 91% 60%;
+        --radius: 0.25rem;
+        --chart-1: 217 91% 60%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 38 92% 50%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+        
+        /* Custom tokens */
+        --surface-1: 240 4% 10%;
+        --surface-2: 240 4% 16%;
+        --surface-active: 240 4% 26%;
+        --status-success: 160 84% 39%;
+        --status-warning: 38 92% 50%;
+        --status-error: 0 84% 60%;
+        --status-info: 217 91% 60%;
+        --grid-line: rgba(255, 255, 255, 0.05);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+    
+    .font-mono, code, pre, .tabular-data {
+        font-family: 'JetBrains Mono', monospace;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--secondary));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+}
+
+/* Custom utility classes */
+@layer utilities {
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    }
+    
+    .border-grid {
+        border-color: var(--grid-line);
+    }
+    
+    .surface-1 {
+        background-color: hsl(var(--surface-1));
+    }
+    
+    .surface-2 {
+        background-color: hsl(var(--surface-2));
+    }
+    
+    .status-success {
+        color: hsl(var(--status-success));
+    }
+    
+    .status-warning {
+        color: hsl(var(--status-warning));
+    }
+    
+    .status-error {
+        color: hsl(var(--status-error));
+    }
+    
+    .status-info {
+        color: hsl(var(--status-info));
+    }
+    
+    .kpi-value {
+        font-family: 'Barlow Condensed', sans-serif;
+        @apply text-4xl font-bold tracking-tight;
+    }
+    
+    .data-label {
+        @apply text-xs uppercase tracking-wider text-muted-foreground;
+    }
+}
+
+/* Animation classes */
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    .animate-slide-up {
+        animation: slideUp 0.5s ease-out;
+    }
+    
+    .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Table specific styles */
+.data-table {
+    @apply w-full text-sm;
+}
+
+.data-table th {
+    @apply h-10 px-4 text-left align-middle font-medium text-muted-foreground uppercase tracking-wider text-xs;
+    background-color: hsl(var(--secondary) / 0.5);
+}
+
+.data-table tr {
+    @apply border-b border-border/40 transition-colors;
+}
+
+.data-table tr:hover {
+    background-color: hsl(var(--muted) / 0.3);
+}
+
+.data-table td {
+    @apply p-4 align-middle;
+}
+
+/* Chart tooltip override */
+.recharts-tooltip-wrapper {
+    outline: none !important;
+}
+
+.recharts-default-tooltip {
+    background-color: hsl(var(--surface-1)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: var(--radius) !important;
+}
+
+/* Debug wrapper styles */
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}

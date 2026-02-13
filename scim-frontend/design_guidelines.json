@@ -1,0 +1,136 @@
+{
+  "identity": {
+    "name": "NexusLogistics - Supply Chain Command",
+    "persona": "E1 - The Anti-AI Designer",
+    "tone": "Precision, Industrial, High-Density, 'The Dark Knight' of Dashboards",
+    "description": "A high-fidelity supply chain command center. It rejects the 'soft' SaaS look for a rigid, data-first 'Heads Up Display' aesthetic. Every pixel is used for intelligence."
+  },
+  "typography": {
+    "font_family_heading": "Barlow Condensed, sans-serif",
+    "font_family_body": "Inter, sans-serif",
+    "font_family_code": "JetBrains Mono, monospace",
+    "scale": {
+      "h1": "text-4xl font-bold tracking-tight uppercase",
+      "h2": "text-2xl font-semibold tracking-tight",
+      "h3": "text-xl font-medium",
+      "body": "text-sm leading-relaxed",
+      "caption": "text-xs text-muted-foreground uppercase tracking-wider",
+      "mono": "font-mono text-xs tracking-tight"
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#09090b",
+      "foreground": "#fafafa",
+      "card": "#121214",
+      "card_foreground": "#fafafa",
+      "popover": "#121214",
+      "popover_foreground": "#fafafa",
+      "primary": "#3b82f6",
+      "primary_foreground": "#ffffff",
+      "secondary": "#27272a",
+      "secondary_foreground": "#fafafa",
+      "muted": "#27272a",
+      "muted_foreground": "#a1a1aa",
+      "accent": "#f59e0b",
+      "accent_foreground": "#000000",
+      "destructive": "#ef4444",
+      "destructive_foreground": "#ffffff",
+      "border": "#27272a",
+      "input": "#27272a",
+      "ring": "#3b82f6"
+    },
+    "custom_tokens": {
+      "surface_1": "#18181b",
+      "surface_2": "#27272a",
+      "surface_active": "#3f3f46",
+      "status_success": "#10b981",
+      "status_warning": "#f59e0b",
+      "status_error": "#ef4444",
+      "status_info": "#3b82f6",
+      "grid_line": "rgba(255, 255, 255, 0.05)"
+    }
+  },
+  "layout_strategy": {
+    "type": "High Density Grid (Mode B)",
+    "container": "w-full max-w-[1920px] mx-auto p-4 md:p-6",
+    "grid_system": "grid grid-cols-12 gap-4",
+    "spacing": {
+      "compact": "gap-2 p-2",
+      "default": "gap-4 p-4",
+      "section": "py-8"
+    },
+    "radius": "rounded-sm"
+  },
+  "components": {
+    "buttons": {
+      "default": "rounded-sm font-medium tracking-wide shadow-none hover:opacity-90 transition-all",
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90",
+      "secondary": "bg-secondary text-secondary-foreground border border-border/50 hover:bg-secondary/80",
+      "ghost": "hover:bg-accent/10 hover:text-accent"
+    },
+    "cards": {
+      "style": "bg-card border border-border/60 rounded-sm shadow-none",
+      "header": "p-4 border-b border-border/40",
+      "content": "p-4"
+    },
+    "tables": {
+      "style": "w-full text-sm border-collapse",
+      "header": "h-10 px-4 text-left align-middle font-medium text-muted-foreground bg-secondary/50 uppercase tracking-wider text-xs",
+      "row": "border-b border-border/40 transition-colors hover:bg-muted/30 data-[state=selected]:bg-muted",
+      "cell": "p-4 align-middle"
+    },
+    "inputs": {
+      "style": "flex h-9 w-full rounded-sm border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-md bg-background/80 border-b border-border/60",
+    "gradients": {
+      "subtle_glow": "bg-gradient-to-tr from-primary/10 via-transparent to-transparent",
+      "active_border": "border-l-2 border-primary"
+    },
+    "motion": {
+      "hover": "transition-all duration-200 ease-in-out",
+      "entrance": "animate-in fade-in slide-in-from-bottom-2 duration-500"
+    }
+  },
+  "images": {
+    "warehouse_hero": "https://images.unsplash.com/photo-1627309366653-2dedc084cdf1?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "warehouse_aisle": "https://images.unsplash.com/photo-1622030433415-153f4ada40fe?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "logistics_tech": "https://images.unsplash.com/photo-1661157072508-c34b1dc84b94?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "avatars": [
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=256",
+      "https://images.unsplash.com/photo-1573496359-136d4755836f?auto=format&fit=crop&q=80&w=256",
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=256",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=256"
+    ]
+  },
+  "charts": {
+    "library": "recharts",
+    "theme": {
+      "stock_levels": {
+        "bar_color": "#3b82f6",
+        "grid_color": "#27272a",
+        "tooltip_bg": "#18181b"
+      },
+      "forecast": {
+        "line_color": "#f59e0b",
+        "area_color": "#f59e0b",
+        "opacity": 0.2
+      }
+    }
+  },
+  "universal_guidelines": [
+    "Use 'High Density' layouts. Avoid excessive white space in data tables.",
+    "Use 'Barlow Condensed' for all numeric KPIs and Headings.",
+    "Borders are your friend. Use 1px borders to separate grid areas instead of just whitespace.",
+    "Status indicators must be distinct: Green (Good), Yellow (Warning), Red (Critical), Blue (Info).",
+    "NEVER use generic gradients. Use flat, solid colors or subtle glows.",
+    "Interactive elements must have a clear :hover state (brightness-110 or bg-accent/10).",
+    "All charts must have a dark background compatible tooltip.",
+    "Use 'sonner' for all toast notifications.",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}

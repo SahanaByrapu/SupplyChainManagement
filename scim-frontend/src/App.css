@@ -1,0 +1,116 @@
+/* NexusLogistics Custom Styles */
+
+/* Sidebar styles */
+.sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-sm text-sm font-medium transition-all duration-200;
+    @apply text-muted-foreground hover:text-foreground hover:bg-secondary/50;
+}
+
+.sidebar-link.active {
+    @apply text-primary bg-primary/10 border-l-2 border-primary;
+}
+
+/* KPI Card styles */
+.kpi-card {
+    @apply bg-card border border-border/60 rounded-sm p-4 transition-all duration-200;
+}
+
+.kpi-card:hover {
+    @apply border-border;
+}
+
+/* Status badge styles */
+.status-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-medium;
+}
+
+.status-badge.success {
+    @apply bg-emerald-500/20 text-emerald-400;
+}
+
+.status-badge.warning {
+    @apply bg-amber-500/20 text-amber-400;
+}
+
+.status-badge.error {
+    @apply bg-red-500/20 text-red-400;
+}
+
+.status-badge.info {
+    @apply bg-blue-500/20 text-blue-400;
+}
+
+.status-badge.pending {
+    @apply bg-zinc-500/20 text-zinc-400;
+}
+
+/* Chart container */
+.chart-container {
+    @apply bg-card border border-border/60 rounded-sm p-4;
+}
+
+/* Alert card */
+.alert-card {
+    @apply flex items-start gap-3 p-3 rounded-sm border-l-2 transition-all duration-200;
+}
+
+.alert-card.critical {
+    @apply bg-red-500/10 border-red-500;
+}
+
+.alert-card.warning {
+    @apply bg-amber-500/10 border-amber-500;
+}
+
+.alert-card.info {
+    @apply bg-blue-500/10 border-blue-500;
+}
+
+/* Data grid */
+.data-grid {
+    @apply grid gap-4;
+}
+
+/* Form styles */
+.form-group {
+    @apply space-y-2;
+}
+
+.form-label {
+    @apply text-sm font-medium text-foreground;
+}
+
+.form-input {
+    @apply flex h-9 w-full rounded-sm border border-input bg-transparent px-3 py-1 text-sm;
+    @apply transition-colors placeholder:text-muted-foreground;
+    @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+/* Header styles */
+.page-header {
+    @apply flex items-center justify-between mb-6;
+}
+
+.page-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    @apply text-2xl font-semibold tracking-tight;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    @apply animate-spin h-5 w-5 border-2 border-primary border-t-transparent rounded-full;
+}
+
+/* Empty state */
+.empty-state {
+    @apply flex flex-col items-center justify-center py-12 text-center;
+}
+
+.empty-state-icon {
+    @apply w-12 h-12 text-muted-foreground mb-4;
+}
+
+.empty-state-text {
+    @apply text-muted-foreground text-sm;
+}

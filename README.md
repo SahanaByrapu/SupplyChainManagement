@@ -1,139 +1,85 @@
+# NexusLogistics - Supply Chain Management System PRD
 
- #### SUPPLY CHAIN AND INVENTORY MANAGEMENT (SCIM) 
+## Original Problem Statement
+Build Supply Chain and Inventory management system using React JS as frontend implementing:
+1. Inventory Dashboard - Stock Levels (Bar chart), Alerts/Reorder, Warehouse KPIs
+2. Supplier Portal - Supplier Risk, SLA Compliance, Performance Metrics  
+3. Forecast Dashboard - Demand Forecast (Line chart), Warehouse Trends
+4. Order Tracking UI - Order status table, Backorders
 
- **Full-Stack Architecture Diagram**
-                        
-                        
-                        ┌──────────────────────────────┐
-                        │         Frontend Layer        │
-                        │  React / Next.js dashboards   │
-                        └─────────────┬────────────────┘
-                                      │
-          ┌─────────────┬─────────────┴─────────────┬─────────────┐
-          │             │                           │             │       
-| **1.Inventory Dashboard**   | **2.Supplier Portal** | **3.Forecast Dashboard** |  **4.Order Tracking UI**|
-|-----------------------------|-----------------------|-------------------------|--------------------------|
-| - Stock levels              | - Supplier risk       |    - Demand forecasts    | - Order status         |
-| - Alerts / Reorder          | - SLA compliance      |    - Warehouse trends    | - Backorders            |
-| - Warehouse KPIs            | - Performance metrics |                          
+**User Choices:**
+- Real database with CRUD operations for all entities (inventory, suppliers, orders, forecasts)
+- JWT-based custom auth with login/signup
+- Dark theme (professional dashboard look)
 
-                                      │
-                                      ▼
-                             ┌───────────────┐
-                             │ API Gateway    │
-                             │ Auth / RBAC    │
-                             │ Rate-limiting │
-                             └──────┬────────┘
-                                    │
-                                    ▼
-                          ┌──────────────────────┐
-                          │ Backend Services     │
-                          │ (Spring Boot / Node) │
-                          │ - Inventory          │
-                          │ - Suppliers          │
-                          │ - Orders             │
-                          │ - Workflow Engine    │
-                          └──────────┬───────────┘
-                                     │
-                   ┌─────────────────┴─────────────────┐
-                   │                                   │
-          ┌────────▼────────┐                 ┌────────▼────────┐
-          │ ML Serving Layer │                 │ Data Layer      │
-          │ - Forecasting    │                 │ - Postgres      │
-          │ - Segmentation   │                 │ - MongoDB       │
-          │ - Optimization   │                 │ - S3 Storage    │
-          └────────┬─────────┘                 └────────┬────────┘
-                   │                                   │
-                   ▼                                   ▼
-           ┌─────────────┐                     ┌─────────────┐
-           │ ML Pipelines │                     │ Monitoring &│
-           │ ETL → Train  │                     │ Observability│
-           │ → Deploy     │                     │ Prometheus /│
-           │ Forecasting  │                     │ Grafana /   │
-           └─────────────┘                     │ Logging     │
-                                               └─────────────┘
+## Architecture
 
-                ┌──────────────────────────┐
-                │        AWS Cloud         │
-                │                          │
-                │ Compute: ECS / EKS       │
-                │ Storage: S3 / RDS        │
-                │ ML: SageMaker / Bedrock  │
-                │ Events: SQS / Kinesis    │
-                │ Security: IAM / KMS      │
-                │ Monitoring: CloudWatch   │
-                └──────────────────────────┘
-**Project RoadMap**
+### Backend (FastAPI + MongoDB)
+- JWT Authentication (login/signup/me)
+- CRUD endpoints for: Inventory, Suppliers, Orders, Forecasts
+- Dashboard aggregation endpoints: stats, stock-levels, warehouse-stats, alerts
+- Seed data endpoint for demo purposes
 
-**Phase Features**
+### Frontend (React + Shadcn UI)
+- Dark professional theme with Barlow Condensed/Inter/JetBrains Mono fonts
+- 5 Dashboard pages: Overview, Inventory, Suppliers, Forecast, Orders
+- Recharts for data visualization (bar charts, line charts, area charts)
+- Real-time alerts and KPI displays
 
-| Phase        |        Function                             |
-|--------------| ------------------------------------------  |
-| **Phase 1** |  * Core inventory + catalog + authentication |
-| **Phase 2** | * Orders + procurement + Kafka event flows   |
-| **Phase 3** | * Forecasting & intelligent reorder engine   |
-| **Phase 4** | * RMA & repair lifecycle                     |
-| **Phase 5** | * Search + recommendations                   |
-| **Phase 6** | * Analytics dashboards & observability       |
-| **Phase 7** | * Docker + K8s deployment + CI/CD            |
+## User Personas
+1. **Supply Chain Manager** - Monitors overall supply chain health, supplier performance
+2. **Warehouse Operator** - Tracks inventory levels, manages reorder alerts
+3. **Procurement Analyst** - Analyzes supplier risk, manages purchase orders
+4. **Demand Planner** - Reviews forecasts, tracks actual vs predicted demand
 
+## Core Requirements (Static)
+- [x] JWT Authentication (login/signup)
+- [x] Inventory CRUD with stock levels, alerts, warehouse KPIs
+- [x] Supplier CRUD with risk assessment, SLA compliance, performance metrics
+- [x] Order tracking with status management, backorders
+- [x] Demand forecasting with trend visualization
+- [x] Dark professional dashboard theme
 
-**Folder Structure:**
+## What's Been Implemented
 
-src/
-│
-├─ components/
-│   ├─ Navbar.jsx
-│   ├─ Sidebar.jsx
-│   ├─ InventoryDashboard.jsx
-│   ├─ SupplierPortal.jsx
-│   ├─ ForecastDashboard.jsx
-│   └─ OrderTracking.jsx
-│
-├─ App.jsx
-├─ index.jsx
-└─ routes.jsx
+### Backend
+- Complete FastAPI backend with JWT auth
+- MongoDB collections: users, inventory, suppliers, orders, forecasts
+- 22+ API endpoints fully functional
+- Seed data for quick demo setup
 
+### Frontend
+- Professional dark theme ("NexusLogistics Command Center")
+- 6 pages: Login, Signup, Overview, Inventory, Suppliers, Forecast, Orders
+- Interactive charts with Recharts
+- Full CRUD operations with dialogs
+- Search and filter capabilities
+- Responsive sidebar navigation
 
+## Test Results
+- Backend: 100% (22/22 tests passed)
+- Frontend: 95% (all major features working)
 
+## Prioritized Backlog
 
-code
-Code
+### P0 (Critical) - Completed
+- [x] Authentication system
+- [x] All 4 dashboard views
+- [x] CRUD operations
 
-preview
-Preview
+### P1 (Important) - Future
+- [ ] Export data to CSV/Excel
+- [ ] Email notifications for low stock alerts
+- [ ] Bulk import inventory from CSV
 
-Deploy
-Deploy
-Loading...
-Robot
-All pages are working perfectly. Now let me create the PRD.md file and finish the task:
+### P2 (Nice to Have) - Future
+- [ ] Advanced analytics with AI predictions
+- [ ] Multi-user roles (admin, viewer, operator)
+- [ ] Mobile responsive improvements
+- [ ] Dark/Light theme toggle
 
-$ mkdir -p /app/memory && cat > /app/memory/PRD.md...
-Feb 12, 04:27 PM
-
-Rollback
-Rollback
-
-Copy
-Robot
-Summary: Summary: ## NexusLogistics Supply Chain Management System - MVP Complete
-
-Built a comprehensive supply chain and inventory management system with:
-
-Features Implemented:
-
-JWT Authentication: Secure login/signup with token-based auth
-Inventory Dashboard: Stock levels bar chart, warehouse KPIs, reorder alerts (3 low stock items tracked)
-Supplier Portal: 5 suppliers with risk scores, SLA compliance (90.1% avg), quality ratings
-Forecast Dashboard: Demand forecast line chart with predicted vs actual trends, 81% accuracy
-Order Tracking: Status table, filtering, backorder alerts (1 active backorder highlighted)
-Tech Stack: React + Shadcn UI + Recharts (frontend) | FastAPI + MongoDB (backend)
-
-Testing: Backend 100% pass (22/22 endpoints) | Frontend 95% functional
-
-Next Action Items:
-
-Add CSV export for inventory reports
-Implement email notifications for critical stock alerts
-Add multi-user role management (admin/viewer/operator)
+## Next Tasks
+1. Add CSV export functionality for inventory reports
+2. Implement email notifications for critical alerts
+3. Add user role management (admin, manager, viewer)
+4. Create inventory bulk import feature
